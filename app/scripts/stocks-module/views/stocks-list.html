@@ -1,0 +1,22 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">Latest News</div>
+  <div class="panel-body">
+    	<div ng-controller="stocks-controller">
+				<div ng-repeat="item in newsItems">
+						<div ng-repeat="(key,content) in item">
+							<div  ng-if="key === 'content'">{{content}}
+								<div ng-if="key === 'content'" class = "glyphicon glyphicon-link" />
+							</div>
+						</div>
+				</div>
+			</div>
+  </div>
+</div>
+
+
+
+
+
+
+

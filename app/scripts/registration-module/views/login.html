@@ -1,0 +1,57 @@
+<section class="card login">
+  <form NAME="loginform" novalidate="true" ng-submit="regCtl.login()">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <p>{{message}} {{user}} </p>
+
+
+
+    <div class="input-group margin-bottom-sm">
+      <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+
+      <input type="email"
+              ng-model='regCtl.user.email'
+              name='email'
+              class="form-control"
+              placeholder="Email address"
+              required
+              autofocus="true">
+
+              <p ng-show="loginform.email.$invalid &&
+                          loginform.email.$touched &&
+                          loginform.email.$dirty"
+                          class="error validationerror">
+                Your email is required.
+              </p>
+    </div>
+
+
+    <!-- Password -->
+    <div class="input-group margin-bottom-sm">
+      <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+      <div class="form-group">
+
+        <input  type="password"
+                name="password"
+                ng-model='regCtl.user.password'
+                class="form-control"
+                required>
+
+                <p ng-show="loginform.password.$invalid &&
+                            loginform.password.$touched &&
+                            loginform.password.$dirty"
+                            class="error validationerror">
+                  Please enter a password
+                </p>
+
+      </div>
+    </div>
+
+
+
+    <button class="btn btn-lg btn-primary btn-block"
+    ng-disabled="loginform.$invalid"
+    type="submit">Sign in
+    </button>
+    <p>or <a ng-href="#/register">register</a></p>
+  </form>
+</section>

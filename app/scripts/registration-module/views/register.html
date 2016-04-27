@@ -1,0 +1,105 @@
+<section class="card login">
+  <form role="form"
+    name="registrationform"
+    ng-submit="regCtl.signup()"
+    novalidate="true"
+    >
+    <h2>Please register </h2>
+    <p>{{regCtl.message}}<!-- {{user}} --></p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-12">
+        <div class="form-group">
+          <input  type="text"
+          name="firstname"
+          ng-model = "regCtl.user.firstname"
+          class="form-control"
+          placeholder="First Name"
+          tabindex="1"
+          required
+          >
+          <p ng-show="registrationform.firstname.$invalid && registrationform.firstname.$touched && registrationform.firstname.$dirty"
+            class="error validationerror">
+            Please enter your firstname
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-12">
+        <div class="form-group">
+          <input  type="text"
+          name="lastname"
+          ng-model = "regCtl.user.lastname"
+          class="form-control"
+          placeholder="Last Name"
+          tabindex="2"
+          required
+          >
+          <p ng-show="registrationform.lastname.$invalid && registrationform.lastname.$touched && registrationform.lastname.$dirty"
+            class="error validationerror">
+            Please enter your surname
+          </p>
+        </div>
+      </div>
+      </div> <!-- / row -->
+      <div class="form-group">
+        <input type="email"
+        name="email"
+        ng-model = "regCtl.user.email"
+        class="form-control"
+        placeholder="Email Address"
+        tabindex="4"
+        required
+        >
+        <p ng-show="registrationform.email.$invalid && registrationform.email.$touched && registrationform.email.$dirty"
+          class="error validationerror">
+          Your email is required.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-12">
+          <div class="form-group">
+            <input type="password"
+            name="password"
+            ng-model = "regCtl.user.password"
+            class="form-control"
+            placeholder="Password"
+            tabindex="5"
+            required
+            >
+            <p ng-show="registrationform.password.$invalid && registrationform.password.$touched && registrationform.password.$dirty"
+              class="error validationerror">
+              Please enter a password
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12">
+          <div class="form-group">
+            <input type="password"
+            name="passwordconfirmation"
+            ng-model = "regCtl.user.passwordconfirmation"
+            class="form-control "
+            placeholder="Confirm Password"
+            tabindex="6"
+            required
+            >
+            <p ng-show="registrationform.passwordconfirmation.$invalid &&
+              registrationform.passwordconfirmation.$touched &&
+              registrationform.passwordconfirmation.$dirty"
+              class="error validationerror">
+              Please confirm your chosen password
+            </p>
+          </div>
+        </div>
+        </div> <!-- / row -->
+        <div class="row">
+          <div class="col-xs-8 col-sm-9 col-md-8">
+            <div class="form-group">
+              By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <input type="submit" value="Register" ng-disabled="registrationform.$invalid" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+          </div>
+        </form>
+      </div>
