@@ -6,6 +6,7 @@
  * @description
  * # MainCtrl
  * Controller of the login-module
+ * This module not used .. everything is done through registration.ctrl.js
  */
 
 angular.module('registration-module.controllers')
