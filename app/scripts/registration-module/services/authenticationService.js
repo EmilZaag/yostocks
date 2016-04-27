@@ -17,9 +17,7 @@ angular.module('registration-module.services')
                 var userObject = $firebaseObject(userRef);
 
                 console.log('$onAuth event ',authorisedUser);
-                //$rootScope.avatar = userRef.password.profileImageURL;
-                //$rootScope.message  = userRef.password.email + ' you are logged in';
-                //$rootScope.currentUser = userObject;
+
 
             } else {
                 $rootScope.currentUser = '';
@@ -62,6 +60,13 @@ angular.module('registration-module.services')
             });
         },
 
+        getAuthStatus : function() {
+                 //$rootScope.avatar = userRef.password.profileImageURL;
+                //$rootScope.message  = userRef.password.email + ' you are logged in';
+                //$rootScope.currentUser = userObject;
+             return authData;
+        },
+
         logout : function() {
              auth.$unauth();
         },
@@ -73,101 +78,10 @@ angular.module('registration-module.services')
             });
          }//,
 
-        // getAuthStatus : function() {
-        //      return authData;
-        // }
+
     };
 
 }]);
-
-    //return AuthenticationService;
-
-
-        // var AuthenticationService = {};         // This factory instance
-
-        // return the authorisation status
-        // updates on logging in, logging out and session expiry
-        // auth.$onAuth(function(authData) {
-        //   $rootScope.authStatus = authData;
-        //   console.log('Auth status from onAuth event: '+authData);
-        // }),
-
-        // remove the user
-        //
-
-
-        // public functions
-        // return {
-        //     signup: signup,
-        //     remove: removeUser,
-        //     getAuthStatus: getAuthStatus,
-        //     login: login,
-        //     logout: logout
-        //         //auth: auth
-        // }
-
-
-
-
-
-
-
-
-        //     // passing this message to rootscope allows it to be used in any controller
-        //     $rootScope.message = user.firstname + ' ' + user.lastname + ' you are registered!';
-
-        // }.catch(function(error) {
-        //     $rootScope.message = error.message; // on error (like when the email has already been registered)
-        // });
-
-        //$location.url('/login');
-    //}
-
-
-
-    //     auth.$onAuth(function(authUser) { // event called on the authorisation of a user (on login)
-    //         if (authUser) {
-    //             var userRef = new Firebase(FIREBASE_URL + 'users' + authUser.uuid);
-    //             var userObj = $firebaseObject(userRef);
-    //             $rootScope.currentUser = userObj;
-    //         } else {
-    //             $rootScope.currentUser = ' ';
-    //         }
-    //     });
-
-    // function auth() {
-    //     return auth;
-    // }
-
-    // function logout() {
-    //     auth.$unauth();
-    //     $rootScope.message = user.email + ' you are logged out';
-    // }
-
-
-
-
-
-
-        // function login (user){              // the login function
-        //     auth.$authWithPassword({
-        //         email: user.email,
-        //         password: user.password
-        //     }).then(function(regUser){
-        //         $rootScope.message  = user.email + ' you are logged in';
-        //         $location.url('/stocks');
-        //     }).catch(function(error){
-        //         $rootScope.message = error.message;
-        //     });
-        // };
-
-
-
-
-
-
-
-
 
 
 
